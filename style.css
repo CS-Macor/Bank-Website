@@ -1,0 +1,524 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  color: #333333;
+  font-family: myriad-pro-n4, myriad-pro, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  padding-block: 1rem;
+  /* border: 10px solid red; */
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* background: #f5f5f5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo-1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: url(./earth-G8537060e3_1920-removebg-preview.png);
+  background-size: cover;
+  border-radius: 50%;
+  filter: brightness(1.5) contrast(1.5);
+  /* background-color: blue; */
+
+}
+
+/* in class .text below, property of animation is for setting run around fast or slow (high number is slow.Example 25s) */
+.text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateText 25s linear infinite;
+
+}
+
+.text p {
+
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  color: #00415f;
+  /* text-shadow: 1px 1px 2px black; */
+
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.text span {
+  position: absolute;
+  left: 50%;
+  font-size: 1rem;
+  transform-origin: 0 100px;
+
+}
+
+/* Started point of nav */
+nav {
+  max-width: 960px;
+  margin-inline: auto;
+  height: 190px;
+  /* background: blue; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* nav .logo img {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  max-height: 50px;
+  max-width: 50px;
+} */
+
+nav .mainMenu {
+  width: 850px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1rem 1rem;
+  list-style: none;
+
+  justify-content: center;
+  align-items: center;
+}
+
+nav .mainMenu li a {
+  display: flex;
+  padding: 10px;
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+}
+
+nav .mainMenu li a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  display: flex;
+  gap: 1.5rem 1.5rem;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+
+}
+
+.icon .fa-solid:hover {
+  font-size: 1.5rem;
+}
+
+.changeLanguage {
+  display: flex;
+  gap: 1.5rem 1.5rem;
+  font-family: content, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  /* margin-left: 1rem; */
+  cursor: pointer;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  background: #ec2028 !important;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 100vw;
+  /* border-radius: 0 0 100vw; */
+  /* border-radius: 100vw 100vw; */
+  /* border-radius: 100vw 0  100vw; */
+  color: #fff;
+  font-size: 14px !important;
+  gap: 1.5rem 1.5rem;
+  /* font-family: myriad-pro-n4, myriad-pro, Arial, sans-serif; */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Ended poin of nav */
+/* Started of of mainBody */
+.mainBody {
+  width: 100%;
+  height: 690px;
+  /* background: white; */
+  margin: auto;
+  background-image: repeating-linear-gradient(45deg,
+      #fff, lightgray 1px);
+  /* margin-top: 0rem; */
+}
+
+.mainBody .pictureSlide {
+  width: 70%;
+  height: 390px;
+  background: rgb(255, 100, 0);
+  margin: auto;
+  border-radius: 8px;
+}
+
+.pictureSlide img {
+  max-width: 100%;
+  height: 390px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pictureSlide {
+  position: relative;
+  display: flex;
+}
+
+.slider {
+  width: 800px;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+
+}
+
+
+.slide img {
+  width: 800px;
+  height: 390px;
+}
+
+/* css for navigate-manual */
+
+.navigate-manual {
+  position: absolute;
+  width: 800px;
+  margin-top: 340px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.manual-btn {
+
+  border: 2px solid #40d3dc;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1.5s;
+  /* Bellow (Width and height),how to increase radio button size */
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: #40d3dc;
+}
+
+#radio1:checked~.first {
+  margin-left: 0;
+}
+
+#radio2:checked~.first {
+  margin-left: -20%;
+}
+
+#radio3:checked~.first {
+  margin-left: -40%;
+}
+
+#radio4:checked~.first {
+  margin-left: -60%;
+}
+
+#radio5:checked~.first {
+  margin-left: -80%;
+}
+
+/* css for navigate-auto */
+.navigate-auto {
+  position: absolute;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  margin-top: 360px;
+
+}
+
+.navigate-auto div {
+  border: 2px solid #40d3dc;
+  padding: 5px;
+  border-radius: 10px;
+  /* cursor: pointer; */
+  transition: 1.5s;
+  /* Bellow (Width and height),how to increase radio button size */
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.navigate-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked~.navigate-auto .auto-btn1 {
+  background: #ec2028 !important;
+
+}
+
+#radio2:checked~.navigate-auto .auto-btn2 {
+  background: #ec2028 !important;
+}
+
+#radio3:checked~.navigate-auto .auto-btn3 {
+  background: #ec2028 !important;
+}
+
+#radio4:checked~.navigate-auto .auto-btn4 {
+  background: #ec2028 !important;
+}
+
+#radio5:checked~.navigate-auto .auto-btn5 {
+  background: #ec2028 !important;
+}
+
+.Wrapper-menuBar {
+  width: 74%;
+  height: 40px;
+  /* margin: auto; */
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 170px;
+  background: #00415f;
+  background: -moz-linear-gradient(top, #00415f 0%, #00415f 9%, #003047 47%, #002c40 94%, #00293d 100%);
+  background: -webkit-linear-gradient(top, #00415f 0%, #00415f 9%, #003047 47%, #002c40 94%, #00293d 100%);
+  background: linear-gradient(to bottom, #00415f 0%, #00415f 9%, #003047 47%, #002c40 94%, #00293d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00415f', endColorstr='#00293d', GradientType=0);
+}
+
+.Wrapper-menuBar .menuBar {
+  display: flex;
+  list-style: none;
+}
+
+.Wrapper-menuBar .menuBar li a {
+  /* display: inline-block; */
+  padding: 20px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  /* display: flex; */
+  text-align: center;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  margin-top: -8px;
+}
+
+.fa-caret-down {
+  margin-left: 1.5rem;
+  font-size: 0.7em;
+}
+
+.smallPicturesWrapper {
+  /* display: grid;
+  gap: 2rem;
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr)); */
+
+  width: 52%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.smallPicture {
+  /* padding: 1rem; 
+  grid-row: span 3;
+  display: grid;
+  grid-template-rows: subgrid;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;*/
+
+  width: 30%;
+  height: 30%;
+  margin-top: 15px;
+}
+
+.smallPicture h3 {
+  color: #333;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-thickness: 3px;
+  padding: 5px;
+  margin-left: 0;
+}
+
+.smallPicture img {
+  max-width: 100%;
+  /* height: 210px; */
+  object-fit: fill;
+  cursor: pointer;
+  margin: 5px 35px 5px 5px;
+}
+
+/* Ended of mainBody */
+/* Started of icon-wrapper-below */
+.icon-wrapper-below {
+  width: 52%;
+  align-items: left;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 8px;
+}
+
+.icon-wrapper-below p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #004973;
+}
+
+.icon-below img {
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Ended of icon-wrapper-below */
+/* Started of section */
+section {
+  /* background: rgb(38, 141, 185) !important; */
+  max-width: 100%;
+  height: 200px;
+  display: flex;
+  margin-top: 15px;
+  /* background: #003333; */
+  background: #00415f;
+  background: -moz-linear-gradient(top, #00415f 0%, #00415f 9%, #003047 47%, #002c40 94%, #00293d 100%);
+  background: -webkit-linear-gradient(top, #00415f 0%, #00415f 9%, #003047 47%, #002c40 94%, #00293d 100%);
+  background: linear-gradient(to bottom, #00415f 0%, #00415f 9%, #003047 47%, #002c40 94%, #00293d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00415f', endColorstr='#00293d', GradientType=0);
+}
+
+.end-page-wrapper {
+  width: 52%;
+  height: 150px;
+  /* background: red; */
+  /* background: rgb(38, 141, 185) !important; */
+  margin: auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+}
+
+.end-Page-Logo img {
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  margin: auto;
+}
+
+.title-in-bottom-page1 {
+  font-family: myriad-pro-n4, myriad-pro, Arial, sans-serif;
+  font-size: 1rem;
+  color: #efefef;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.title-in-bottom-page1:hover {
+  text-decoration: underline;
+}
+
+.title-in-bottom-page2 {
+  font-family: myriad-pro-n4, myriad-pro, Arial, sans-serif;
+  font-size: 1rem;
+  color: #efefef;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.title-in-bottom-page2:hover {
+  text-decoration: underline;
+}
+
+.title-in-bottom-page3 {
+  font-family: myriad-pro-n4, myriad-pro, Arial, sans-serif;
+  font-size: 1rem;
+  color: #efefef;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.title-in-bottom-page3:hover {
+  text-decoration: underline;
+}
+
+.end-Page-Content {
+  font-family: myriad-pro-n4, myriad-pro, Arial, sans-serif;
+  font-size: 1rem;
+  /* color: #efefef; */
+  color: #efefef;
+  padding: 3rem;
+  margin: 0;
+  text-align: justify;
+  line-height: 2rem;
+
+}
+
+/* 
+@media(min-width:760px) {
+  .end-Page-Content {
+    gap: 3rem;
+    grid-template-columns: 300px 1fr;
+    overflow: hidden;
+  }
+} */
+
+/* Ended of section  */
